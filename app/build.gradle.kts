@@ -32,14 +32,14 @@ android {
         vectorDrawables { useSupportLibrary = true }
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = System.getenv("STORE_FILE")?.let { file(it) }
-            storePassword = System.getenv("STORE_PASSWORD")
-            keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
-        }
-    }
+    // signingConfigs {
+        // create("release") {
+            // storeFile = System.getenv("STORE_FILE")?.let { file(it) }
+            // storePassword = System.getenv("STORE_PASSWORD")
+            // keyAlias = System.getenv("KEY_ALIAS")
+            // keyPassword = System.getenv("KEY_PASSWORD")
+        // }
+    // }
 
     buildFeatures {
         compose = true
@@ -72,7 +72,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            // signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")

@@ -209,7 +209,7 @@ fun LogScreen(
                 isRefreshing = false,
                 pullToRefreshState = pullToRefreshState,
                 onRefresh = viewModel::loadEarlier,
-                contentPadding = PaddingValues(0.dp),
+                contentPadding = padding,
             ) {
                 LazyColumn(
                     state = listState,

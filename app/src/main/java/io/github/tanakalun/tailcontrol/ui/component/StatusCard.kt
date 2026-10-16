@@ -32,10 +32,6 @@ import top.yukonga.miuix.kmp.basic.Text
 import top.yukonga.miuix.kmp.theme.MiuixTheme
 import top.yukonga.miuix.kmp.utils.PressFeedbackType
 
-/**
- * Home 页状态卡片，与 RikoNyamu `ConfigScreen.StatusCard()` 布局一致：
- * 高 120dp，大号状态图标靠右下、标题文字靠左上。
- */
 @Composable
 fun StatusCard(
     state: BackendState,

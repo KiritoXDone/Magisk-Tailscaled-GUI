@@ -12,8 +12,8 @@
 
     <!-- Splash Screen 主题（AndroidX core-splashscreen 1.0.x） -->
     <style name="Theme.TailControl.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/splash_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/icon_clear</item>
+        <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="postSplashScreenTheme">@style/Theme.TailControl</item>
     </style>
 

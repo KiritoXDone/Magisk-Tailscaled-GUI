@@ -240,7 +240,6 @@ fun DropScreen(
                     }
                 }
             }
-            Spacer(Modifier.height(12.dp))
             Spacer(Modifier.height(padding.calculateBottomPadding() + bottomInset))
         }
         }

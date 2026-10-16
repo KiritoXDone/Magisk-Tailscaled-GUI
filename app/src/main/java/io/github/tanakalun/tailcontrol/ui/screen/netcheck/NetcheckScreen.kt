@@ -127,7 +127,11 @@ fun NetcheckScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .weight(1f)
-                            .padding(horizontal = 12.dp),
+                            .padding(
+                                start = 12.dp,
+                                end = 12.dp,
+                                bottom = padding.calculateBottomPadding() + bottomInset + 12.dp,
+                            ),
                     ) {
                         Box(
                             Modifier
@@ -140,7 +144,6 @@ fun NetcheckScreen(
                             }
                         }
                     }
-                    Spacer(Modifier.height(12.dp))
                 }
                 // 没当前结果时，历史列表占满剩余空间
                 history.isNotEmpty() -> {
