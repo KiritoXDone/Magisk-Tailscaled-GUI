@@ -3,10 +3,8 @@ package io.github.tanakalun.tailcontrol.ui.screen.peer
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -14,25 +12,19 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color as ComposeColor
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.github.tanakalun.tailcontrol.R
-import io.github.tanakalun.tailcontrol.ui.component.SpeedChart
 import io.github.tanakalun.tailcontrol.ui.theme.BlurredBar
 import io.github.tanakalun.tailcontrol.ui.theme.rememberBlurBackdrop
-import top.yukonga.miuix.kmp.basic.Button
-import top.yukonga.miuix.kmp.basic.Card
 import top.yukonga.miuix.kmp.basic.Icon
 import top.yukonga.miuix.kmp.basic.IconButton
 import top.yukonga.miuix.kmp.basic.MiuixScrollBehavior
@@ -129,37 +121,14 @@ fun PeerDetailScreen(
                 PeerOwnershipSection(peer, ui.whois)
                 viewModel.sshCommand?.let { PeerSshSection(command = it) }
 
-                // Ping panel
-                Card(Modifier.fillMaxWidth()) {
-                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-                            Text("Ping", fontWeight = FontWeight.SemiBold)
-                            Spacer(Modifier.weight(1f))
-                            Button(onClick = if (ui.pingActive) viewModel::stopPing else viewModel::startPing) {
-                                Text(stringResource(if (ui.pingActive) R.string.peer_stop_ping else R.string.peer_start_ping))
-                            }
-                        }
-                        if (ui.rttSamples.isNotEmpty()) {
-                            SpeedChart(
-                                rxValues = ui.rttSamples,
-                                txValues = emptyList(),
-                                rxLabel = "RTT (ms)",
-                                txLabel = "",
-                                height = 160.dp,
-                            )
-                            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                                Text("${stringResource(R.string.peer_ping_avg)}: ${"%.1f".format(viewModel.avgRtt)} ms")
-                                Text("${stringResource(R.string.peer_ping_p95)}: ${"%.1f".format(viewModel.p95Rtt)} ms")
-                                Text("${stringResource(R.string.peer_ping_count)}: ${ui.rttSamples.size}")
-                            }
-                        }
-                        if (ui.pingLines.isNotEmpty()) {
-                            Box(Modifier.fillMaxWidth().height(160.dp).verticalScroll(rememberScrollState())) {
-                                Text(ui.pingLines.joinToString("\n"), fontSize = 13.sp)
-                            }
-                        }
-                    }
-                }
+                PeerPingSection(
+                    pingActive = ui.pingActive,
+                    rttSamples = ui.rttSamples,
+                    pingLines = ui.pingLines,
+                    avgRtt = viewModel.avgRtt,
+                    p95Rtt = viewModel.p95Rtt,
+                    onTogglePing = if (ui.pingActive) viewModel::stopPing else viewModel::startPing,
+                )
 
                 Spacer(Modifier.height(16.dp))
                 Spacer(Modifier.height(padding.calculateBottomPadding()))

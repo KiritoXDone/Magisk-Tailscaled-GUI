@@ -267,7 +267,9 @@
     <string name="peer_addresses">网络地址</string>
     <string name="peer_active">活跃</string>
     <string name="peer_start_ping">开始 Ping</string>
-    <string name="peer_stop_ping">停止</string>
+    <string name="peer_stop_ping">停止 Ping</string>
+    <string name="peer_ping_results">Ping 结果</string>
+    <string name="peer_ping_waiting">正在等待响应…</string>
     <string name="peer_ping_avg">平均</string>
     <string name="peer_ping_p95">p95</string>
     <string name="peer_ping_count">样本数</string>

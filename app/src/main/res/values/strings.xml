@@ -271,7 +271,9 @@
     <string name="peer_addresses">Network addresses</string>
     <string name="peer_active">Active</string>
     <string name="peer_start_ping">Start ping</string>
-    <string name="peer_stop_ping">Stop</string>
+    <string name="peer_stop_ping">Stop ping</string>
+    <string name="peer_ping_results">Ping results</string>
+    <string name="peer_ping_waiting">Waiting for a response…</string>
     <string name="peer_ping_avg">avg</string>
     <string name="peer_ping_p95">p95</string>
     <string name="peer_ping_count">samples</string>
