@@ -247,6 +247,20 @@
     <string name="traffic_no_data">No tailscale0 interface yet — start Tailscale to see traffic.</string>
 
     <!-- Peer detail -->
+    <string name="peer_connection">Connection</string>
+    <string name="peer_activity">Activity</string>
+    <string name="peer_inactive">Inactive</string>
+    <string name="peer_device_info">Device information</string>
+    <string name="peer_device_id">Device ID</string>
+    <string name="peer_not_found">Device not found</string>
+    <string name="peer_expand">Expand</string>
+    <string name="peer_collapse">Collapse</string>
+    <string name="peer_expanded">Expanded</string>
+    <string name="peer_collapsed">Collapsed</string>
+    <plurals name="peer_item_count">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
     <string name="peer_detail">Node detail</string>
     <string name="peer_os">OS</string>
     <string name="peer_relay">Relay</string>
@@ -254,7 +268,7 @@
     <string name="peer_allowed_ips">Allowed IPs</string>
     <string name="peer_exit_node_option">Can act as exit node</string>
     <string name="peer_is_exit_node">Currently used as exit node</string>
-    <string name="peer_addresses">Addresses</string>
+    <string name="peer_addresses">Network addresses</string>
     <string name="peer_active">Active</string>
     <string name="peer_start_ping">Start ping</string>
     <string name="peer_stop_ping">Stop</string>
@@ -277,9 +291,9 @@
     <!-- New (post-launch) -->
     <string name="peer_owner">Owner</string>
     <string name="peer_user">User</string>
-    <string name="peer_machine">Machine</string>
+    <string name="peer_machine">Device hostname</string>
     <string name="peer_ssh_command">Tailscale SSH</string>
-    <string name="peer_ssh_hint">Run this command on a machine with the tailscale CLI to SSH into this node.</string>
+    <string name="peer_ssh_hint">Run in a terminal with Tailscale installed.</string>
 
     <string name="exit_node_suggest_use">Use suggested: %1$s</string>
 

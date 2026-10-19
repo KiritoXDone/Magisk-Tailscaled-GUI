@@ -244,15 +244,28 @@
     <string name="traffic_no_data">还没看到 tailscale0 接口——启动 Tailscale 后才会有流量。</string>
 
     <!-- Peer detail -->
+    <string name="peer_connection">连接</string>
+    <string name="peer_activity">活动状态</string>
+    <string name="peer_inactive">未活跃</string>
+    <string name="peer_device_info">设备信息</string>
+    <string name="peer_device_id">设备 ID</string>
+    <string name="peer_not_found">未找到设备</string>
+    <string name="peer_expand">展开</string>
+    <string name="peer_collapse">收起</string>
+    <string name="peer_expanded">已展开</string>
+    <string name="peer_collapsed">已收起</string>
+    <plurals name="peer_item_count">
+        <item quantity="other">%d 项</item>
+    </plurals>
     <string name="peer_detail">节点详情</string>
     <string name="peer_os">操作系统</string>
-    <string name="peer_relay">中继</string>
+    <string name="peer_relay">中继节点</string>
     <string name="peer_routes">主路由</string>
     <string name="peer_allowed_ips">允许的 IP</string>
     <string name="peer_exit_node_option">可作为出口节点</string>
     <string name="peer_is_exit_node">当前使用此出口节点</string>
-    <string name="peer_addresses">地址</string>
-    <string name="peer_active">活跃中</string>
+    <string name="peer_addresses">网络地址</string>
+    <string name="peer_active">活跃</string>
     <string name="peer_start_ping">开始 Ping</string>
     <string name="peer_stop_ping">停止</string>
     <string name="peer_ping_avg">平均</string>
@@ -272,10 +285,10 @@
 
     <!-- New (post-launch) -->
     <string name="peer_owner">归属</string>
-    <string name="peer_user">用户</string>
-    <string name="peer_machine">机器</string>
+    <string name="peer_user">所属用户</string>
+    <string name="peer_machine">设备域名</string>
     <string name="peer_ssh_command">Tailscale SSH</string>
-    <string name="peer_ssh_hint">在装了 tailscale CLI 的设备上跑这条命令即可 SSH 进该节点。</string>
+    <string name="peer_ssh_hint">在已安装 Tailscale 的终端中运行</string>
 
     <string name="exit_node_suggest_use">使用建议：%1$s</string>
 
